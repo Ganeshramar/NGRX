@@ -1,0 +1,13 @@
+<p>child works!</p>
+<!-- child.component.html -->
+<div>
+    <h3>Child Component</h3>    
+    <ng-content select=".data"></ng-content>
+    <ng-content></ng-content>
+    <!-- Using ng-template to define content -->
+    <!-- <ng-template> -->
+      <p>This content is projected from the child component.</p>
+    <!-- </ng-template>    -->
+    <ng-content select=".btn-primary"></ng-content>
+  </div>
+  

@@ -1,0 +1,21 @@
+<p>parent works!</p>
+<!-- parent.component.html -->
+<div>
+    <h1>Parent Component</h1>
+    <ng-container *ngTemplateOutlet="template"></ng-container>
+</div>
+
+<ng-template #template>
+    <div>
+        <!-- <h2>Template Content</h2> -->
+        <ng-container *ngFor="let item of items">
+            <!-- Using ng-content to project content -->
+                <app-child>
+                    <p *ngIf="item ==='Item 1'">Template Content</p>
+                    <p class="data">{{ item }}</p>
+                    <button class="btn btn-primary" (click)="dummy()">child click!</button>
+                </app-child>
+            <!-- Displaying item details -->
+        </ng-container>
+    </div>
+</ng-template>

@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <hr/>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="mb-3">
+                <label>Email</label>
+                <input type="text" class="form-control" formControlName="email">
+                <div *ngIf="loginForm.get('email')?.touched && !loginForm.get('email')?.valid">
+                  <div *ngIf="loginForm.get('email')?.errors?.['required']">
+                    E-mail is required
+                  </div>
+                  <div *ngIf="loginForm.get('email')?.errors?.['email']">
+                    Invalid Email
+                  </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label>Password</label>
+                <input type="password" class="form-control" formControlName="password">
+                <div *ngIf="loginForm.get('password')?.touched && !loginForm.get('password')?.valid">
+                  <div *ngIf="loginForm.get('password')?.errors?.['required']">
+                    Password is required
+                  </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Login</button>
+            </div>
+        </form>
+    </div>
+    <ul>
+      @for(grocery of groceries; track grocery){
+        <li>
+        <!-- <li *ngFor="let grocery of groceries; let i = index;"> -->
+          <a href="#">
+            {{ grocery.label }}, {{grocery.another}}
+          </a>
+        </li>
+      } 
+      <hr/><hr/>
+      <li *ngFor="let grocery of groceries;">
+        <a href="#">
+          {{ grocery.label }}, {{grocery.another}}
+        </a>
+      </li>
+    </ul>
+</div>
