@@ -11,7 +11,7 @@ import { autoLogin } from './auth/state/auth.action';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'sampleRxJS';
+  title = 'NGRX';
   showloading!: Observable<boolean>;
   errorMessage !: Observable<string>;
 

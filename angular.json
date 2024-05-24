@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sampleRxJS": {
+    "NGRX": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "sampleRxJS:build:production"
+              "buildTarget": "NGRX:build:production"
             },
             "development": {
-              "buildTarget": "sampleRxJS:build:development"
+              "buildTarget": "NGRX:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "sampleRxJS:build"
+            "buildTarget": "NGRX:build"
           }
         },
         "test": {
